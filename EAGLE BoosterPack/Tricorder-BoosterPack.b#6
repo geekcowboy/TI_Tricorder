@@ -3377,6 +3377,8 @@ design rules under a new name.</description>
 <element name="U$4" library="OPT3001" package="SOT23-6" value="OPT3001" x="32.512" y="13.462"/>
 <element name="C1" library="adafruit" package="C0603" value="" x="25.146" y="11.43" rot="R270"/>
 <element name="U$5" library="LPT5010" package="TPL5010" value="TPL5010" x="28.194" y="18.034"/>
+<element name="R9" library="resistor" package="R0603" value="10k" x="27.94" y="11.43" rot="R270"/>
+<element name="C2" library="adafruit" package="C0603" value="0.1u" x="1.016" y="-3.556"/>
 </elements>
 <signals>
 <signal name="3V">
@@ -3404,6 +3406,12 @@ design rules under a new name.</description>
 <wire x1="20.058" y1="8.894" x2="20.57" y2="8.894" width="0.254" layer="1"/>
 <wire x1="20.57" y1="8.894" x2="21.082" y2="8.382" width="0.254" layer="1"/>
 <wire x1="21.082" y1="8.382" x2="21.082" y2="6.858" width="0.254" layer="1"/>
+<contactref element="U$4" pad="1"/>
+<contactref element="R9" pad="2"/>
+<contactref element="C2" pad="1"/>
+<wire x1="27.94" y1="10.58" x2="31.562" y2="12.1619" width="0" layer="19" extent="1-1"/>
+<wire x1="21.082" y1="8.382" x2="27.94" y2="10.58" width="0" layer="19" extent="1-1"/>
+<wire x1="0.166" y1="-3.556" x2="18.288" y2="5.168" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DC">
 <contactref element="A1" pad="5"/>
@@ -3591,11 +3599,9 @@ design rules under a new name.</description>
 <wire x1="19.558" y1="9.398" x2="20.054" y2="9.398" width="0.254" layer="1"/>
 <wire x1="20.054" y1="9.398" x2="20.058" y2="9.394" width="0.254" layer="1"/>
 <contactref element="U2" pad="A1"/>
-<contactref element="U$4" pad="3"/>
 <wire x1="25.9588" y1="13.6652" x2="20.058" y2="13.6652" width="0.254" layer="1"/>
 <wire x1="20.058" y1="13.6652" x2="20.058" y2="9.894" width="0.254" layer="1"/>
 <contactref element="C1" pad="2"/>
-<wire x1="33.462" y1="12.1619" x2="33.462" y2="10.094" width="0.254" layer="1"/>
 <wire x1="33.462" y1="10.094" x2="33.274" y2="9.906" width="0.254" layer="1"/>
 <wire x1="32.512" y1="7.366" x2="33.02" y2="6.858" width="0.254" layer="1"/>
 <wire x1="31.496" y1="7.366" x2="32.512" y2="7.366" width="0.254" layer="1"/>
@@ -3635,6 +3641,11 @@ design rules under a new name.</description>
 <via x="38.608" y="29.972" extent="1-16" drill="0.6096"/>
 <via x="38.608" y="26.416" extent="1-16" drill="0.6096"/>
 <contactref element="U$5" pad="2"/>
+<contactref element="C2" pad="2"/>
+<contactref element="U$4" pad="2"/>
+<contactref element="U$4" pad="3"/>
+<wire x1="33.462" y1="12.1619" x2="32.512" y2="12.1619" width="0" layer="19" extent="1-1"/>
+<wire x1="1.866" y1="-3.556" x2="19.058" y2="8.894" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="R3" pad="1"/>
@@ -3677,6 +3688,8 @@ design rules under a new name.</description>
 <wire x1="20.058" y1="8.394" x2="20.058" y2="4.492" width="0.254" layer="1"/>
 <wire x1="20.058" y1="4.492" x2="21.082" y2="3.468" width="0.254" layer="1"/>
 <contactref element="U1" pad="7"/>
+<contactref element="U$4" pad="4"/>
+<wire x1="20.722" y1="12.554" x2="33.462" y2="14.7621" width="0" layer="19" extent="1-1"/>
 <wire x1="20.058" y1="8.394" x2="20.722" y2="12.554" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDA">
@@ -3692,10 +3705,17 @@ design rules under a new name.</description>
 <wire x1="19.304" y1="4.064" x2="19.304" y2="8.148" width="0.254" layer="1"/>
 <wire x1="19.304" y1="8.148" x2="19.058" y2="8.394" width="0.254" layer="1"/>
 <contactref element="U1" pad="6"/>
+<contactref element="U$4" pad="6"/>
+<wire x1="20.722" y1="12.154" x2="31.562" y2="14.7621" width="0" layer="19" extent="1-1"/>
 <wire x1="19.058" y1="8.394" x2="20.722" y2="12.154" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6">
 <contactref element="U2" pad="A2"/>
+</signal>
+<signal name="N$5">
+<contactref element="U$4" pad="5"/>
+<contactref element="R9" pad="1"/>
+<wire x1="27.94" y1="12.28" x2="32.512" y2="14.7621" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
