@@ -148,8 +148,6 @@
 <text x="43.18" y="28.956" size="1.778" layer="21" font="vector" ratio="10" rot="R180" align="center-left">PMOD GPIO</text>
 <text x="3.867" y="30.857" size="1.016" layer="21" font="vector" ratio="10" rot="R180" align="center-left">5v</text>
 <text x="29.485" y="32.158" size="0.8128" layer="21" font="vector" ratio="10" rot="R180" align="center-left">Reset</text>
-<hole x="19.55" y="23.225" drill="0.5"/>
-<dimension x1="-10.575" y1="21.125" x2="-10.875" y2="0.9" x3="-9.559771875" y3="10.995215625" textsize="1.778" layer="1" dtype="diameter"/>
 </plain>
 <libraries>
 <library name="CCo-Boost">
