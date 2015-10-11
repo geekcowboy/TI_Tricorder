@@ -10011,14 +10011,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C9" library="adafruit" deviceset="C-US" device="C0603" value="0"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="U$1" library="adafruit" deviceset="MICROSD" device=""/>
+<part name="GND25" library="supply1" deviceset="GND" device=""/>
+<part name="GND26" library="supply1" deviceset="GND" device=""/>
+<part name="GND27" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="205.74" y="139.7" size="2.54" layer="97" ratio="12">LAUNCHPAD HEADERS</text>
+<text x="160.02" y="139.7" size="2.54" layer="97" ratio="12">LAUNCHPAD HEADERS</text>
 <wire x1="2.54" y1="182.88" x2="2.54" y2="137.16" width="0.2032" layer="97" style="longdash"/>
-<wire x1="2.54" y1="137.16" x2="246.38" y2="137.16" width="0.2032" layer="97" style="longdash"/>
-<wire x1="246.38" y1="137.16" x2="246.38" y2="182.88" width="0.2032" layer="97" style="longdash"/>
+<wire x1="2.54" y1="137.16" x2="246.38" y2="139.7" width="0.2032" layer="97" style="longdash"/>
+<wire x1="246.38" y1="139.7" x2="246.38" y2="182.88" width="0.2032" layer="97" style="longdash"/>
 <wire x1="246.38" y1="182.88" x2="2.54" y2="182.88" width="0.2032" layer="97" style="longdash"/>
 </plain>
 <instances>
@@ -10091,6 +10094,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="C9" gate="G$1" x="50.8" y="53.34"/>
 <instance part="GND6" gate="1" x="45.72" y="83.82" rot="R90"/>
 <instance part="U$1" gate="G$1" x="218.44" y="170.18" rot="R90"/>
+<instance part="GND25" gate="1" x="243.84" y="147.32"/>
+<instance part="GND26" gate="1" x="238.76" y="147.32"/>
+<instance part="GND27" gate="1" x="233.68" y="147.32"/>
 </instances>
 <busses>
 </busses>
@@ -10174,6 +10180,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="116.84" y="121.92"/>
 <label x="116.84" y="129.54" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="VDD"/>
+<wire x1="228.6" y1="152.4" x2="228.6" y2="149.86" width="0.1524" layer="91"/>
+<label x="228.6" y="149.86" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="DC" class="0">
 <segment>
@@ -10194,6 +10205,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="A1" gate="G$1" pin="P$12"/>
 <wire x1="157.48" y1="149.86" x2="160.02" y2="149.86" width="0.1524" layer="91"/>
 <label x="160.02" y="149.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="CS"/>
+<wire x1="218.44" y1="152.4" x2="218.44" y2="149.86" width="0.1524" layer="91"/>
+<label x="218.44" y="149.86" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="LCD_CS" class="0">
@@ -10571,6 +10587,23 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="40.64" y1="83.82" x2="43.18" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND27" gate="1" pin="GND"/>
+<pinref part="U$1" gate="G$1" pin="VSS"/>
+<wire x1="233.68" y1="149.86" x2="231.14" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="149.86" x2="231.14" y2="152.4" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND26" gate="1" pin="GND"/>
+<pinref part="U$1" gate="G$1" pin="GND1"/>
+<wire x1="238.76" y1="149.86" x2="236.22" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="149.86" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND25" gate="1" pin="GND"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="243.84" y1="149.86" x2="238.76" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
