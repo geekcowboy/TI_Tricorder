@@ -143,7 +143,7 @@
 <wire x1="65.25" y1="52.915" x2="1.525" y2="52.84" width="0.2032" layer="20"/>
 <wire x1="1.525" y1="52.84" x2="1.475" y2="0.3" width="0.2032" layer="20"/>
 <text x="4.615" y="5.839" size="1.778" layer="21" font="vector" ratio="10" align="center-left">TI Tricorder</text>
-<text x="20.847" y="3.66" size="1.016" layer="21" font="vector" ratio="10" rot="R180" align="center-left">rev alpha 27SEP15</text>
+<text x="14.147" y="3.86" size="1.016" layer="21" font="vector" ratio="10" rot="R180" align="center-left">version 1.0</text>
 <text x="44.105" y="49.081" size="1.778" layer="21" font="vector" ratio="10" rot="R180" align="center-left">PMOD GPIO</text>
 <text x="5.342" y="48.082" size="1.016" layer="21" font="vector" ratio="10" rot="R180" align="center-left">5v</text>
 <text x="31.835" y="47.308" size="0.8128" layer="21" font="vector" ratio="10" rot="R180" align="center-left">Reset</text>

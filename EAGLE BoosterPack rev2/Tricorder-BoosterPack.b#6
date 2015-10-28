@@ -3583,7 +3583,7 @@ design rules under a new name.</description>
 <element name="C6" library="adafruit" package="C0603" value="1u" x="23.755" y="33.286" rot="R90"/>
 <element name="C7" library="adafruit" package="C0603" value="100n" x="28.657" y="33.065" rot="R90"/>
 <element name="U5" library="LMP91000" package="WFDFN-14" value="LMP91000" x="30.75" y="36.9" rot="R90">
-<attribute name="DIGIKEY" value="LMP91000SDE/NOPBCT-ND" x="30.75" y="36.9" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="DIGIKEY" value="LMP91000" x="30.75" y="36.9" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="JP1" library="adafruit" package="1X03-CLEANBIG" value="" x="22.9" y="40.325"/>
 <element name="R10" library="resistor" package="R0603" value="0" x="22.6" y="37.125"/>
@@ -4441,6 +4441,11 @@ design rules under a new name.</description>
 <wire x1="27.975" y1="39.225" x2="29.075" y2="40.325" width="0.254" layer="1"/>
 <wire x1="29.075" y1="40.325" x2="29.075" y2="40.875" width="0.254" layer="1"/>
 <wire x1="29.075" y1="40.875" x2="29.025" y2="40.925" width="0.254" layer="1"/>
+<contactref element="U5" pad="SINK"/>
+<wire x1="29.25" y1="37.9" x2="28.85" y2="37.9" width="0.254" layer="1"/>
+<wire x1="29.6" y1="37.55" x2="29.25" y2="37.9" width="0.254" layer="1"/>
+<wire x1="30.75" y1="37.55" x2="29.6" y2="37.55" width="0.254" layer="1"/>
+<wire x1="30.75" y1="36.9" x2="30.75" y2="37.55" width="0.254" layer="1"/>
 </signal>
 </signals>
 </board>
