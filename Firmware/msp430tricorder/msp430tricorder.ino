@@ -7,8 +7,10 @@
 #include "LCD_SharpBoosterPack_SPI.h"
 #include "TricorderSupport.h"
 
-
-int k = 0;
+//
+// #DEFINEs and Global Variables
+//
+int sensorCounter = 0;
 boolean goLeft = false;
 boolean goRight = false;
 
@@ -27,12 +29,13 @@ struct tricorderSensors
 //
 // INSTANTIATE DEVICES
 //
+TricorderSupport tricorder;
+tricorderSensors tricorderSensor[numSensors];
 LCD_SharpBoosterPack_SPI myScreen;
-tricorderSensors tricorder[numSensors];
 
 
 //
-//Function SETUP
+//Function: SETUP
 //
 void setup() {  
   // Setup I/O
@@ -49,24 +52,24 @@ void setup() {
   
 
   // Initatize sensors and data fields
-  tricorder[0].sensorID ="HDC1000";
-  tricorder[0].UM = "% Humidity";
-  tricorder[0].sensorVal = 0;
-  tricorder[1].sensorID ="LMT70";
-  tricorder[1].UM = "Degrees F";
-  tricorder[1].sensorVal = 0;
-  tricorder[2].sensorID ="OPT3001";
-  tricorder[2].UM = "Lux";
-  tricorder[2].sensorVal = 0;
-  tricorder[3].sensorID ="MAG3110";
-  tricorder[3].UM = "uT";
-  tricorder[3].sensorVal = 0;
-  tricorder[4].sensorID ="O2 Sensor";
-  tricorder[4].UM = "ppm";
-  tricorder[4].sensorVal = 0;
-  tricorder[5].sensorID ="Pressure";
-  tricorder[5].UM = "kPa";
-  tricorder[5].sensorVal = 0;
+  tricorderSensor[HDC1000_id].sensorID ="HDC1000";
+  tricorderSensor[HDC1000_id].UM = "% Humidity";
+  tricorderSensor[HDC1000_id].sensorVal = -1;
+  tricorderSensor[LMT70_id].sensorID ="LMT70";
+  tricorderSensor[LMT70_id].UM = "Degrees F";
+  tricorderSensor[LMT70_id].sensorVal = -1;
+  tricorderSensor[OPT3001_id].sensorID ="OPT3001";
+  tricorderSensor[OPT3001_id].UM = "Lux";
+  tricorderSensor[OPT3001_id].sensorVal = -1;
+  tricorderSensor[MAG3110_id].sensorID ="MAG3110";
+  tricorderSensor[MAG3110_id].UM = "uT";
+  tricorderSensor[MAG3110_id].sensorVal = -1;
+  tricorderSensor[LMP91000_id].sensorID ="O2 Sensor";
+  tricorderSensor[LMP91000_id].UM = "ppm";
+  tricorderSensor[LMP91000_id].sensorVal = -1;
+  tricorderSensor[PGA900_id].sensorID ="Pressure";
+  tricorderSensor[PGA900_id].UM = "kPa";
+  tricorderSensor[PGA900_id].sensorVal = -1;
 
   // Initialize display
   myScreen.begin();
@@ -77,16 +80,19 @@ void setup() {
   myScreen.flush();  
   delay(5000);
   myScreen.clear();
+  
+  //Get first reading
+  tricorderSensor[HDC1000_id].sensorVal = tricorder.read_HDC1000();
 }
 
 
 //
-// Function: MAIN
+// Function: LOOP
 //
 void loop() {
   
   // Display selected sensor data
-  displayData(tricorder[k].sensorID, tricorder[k].UM, String(tricorder[k].sensorVal, DEC));
+  displayData(tricorderSensor[sensorCounter].sensorID, tricorderSensor[sensorCounter].UM, String(tricorderSensor[sensorCounter].sensorVal, DEC));
 
   // Check for navigation button presses
   goRight = digitalRead(rightButton);
@@ -95,22 +101,46 @@ void loop() {
   delay(debounceDelay);
 
   if (!goRight) {
-    k++;
+    sensorCounter++;
   }
 
   if (!goLeft) {
-    k--;
+    sensorCounter--;
   }
 
-  if (k < 0) {
-    k = numSensors - 1;
+  if (sensorCounter < 0) {
+    sensorCounter = numSensors - 1;
   }
-  else if (k > numSensors-1)
+  else if (sensorCounter > numSensors-1)
   {
-    k = 0;
+    sensorCounter = 0;
   }
-
-
+  
+  
+  //Update sensor reading based on sensor selected by user
+  switch (sensorCounter) {
+    case 0:
+      tricorderSensor[HDC1000_id].sensorVal = tricorder.read_HDC1000();
+      break;
+    case 1:
+      tricorderSensor[LMT70_id].sensorVal = tricorder.read_LMT70();
+      break;
+    case 2:
+      tricorderSensor[OPT3001_id].sensorVal = tricorder.read_OPT3001();
+      break;
+    case 3:
+      tricorderSensor[MAG3110_id].sensorVal = tricorder.read_MAG3110();
+      break;
+    case 4:
+      tricorderSensor[LMP91000_id].sensorVal = tricorder.read_LMP91000();
+      break;
+    case 5:
+      tricorderSensor[PGA900_id].sensorVal = tricorder.read_PGA900();
+      break;
+    default:
+      sensorCounter = 0;
+      tricorderSensor[HDC1000_id].sensorVal = tricorder.read_HDC1000();
+  }
 }
 
 
