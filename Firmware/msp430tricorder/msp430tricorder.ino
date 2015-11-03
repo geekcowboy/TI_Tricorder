@@ -2,17 +2,12 @@
 //LIBRARIES
 //
 #include "SPI.h"
+#include "Wire.h"
 #include "OneMsTaskTimer.h"
 #include "LCD_SharpBoosterPack_SPI.h"
+#include "TricorderSupport.h"
 
 
-//
-// #DEFINES and GLOBAL VARS
-//
-#define numSensors 4
-#define leftButton P4_5
-#define rightButton P1_1
-#define debounceDelay 175
 int k = 0;
 boolean goLeft = false;
 boolean goRight = false;
@@ -41,22 +36,37 @@ tricorderSensors tricorder[numSensors];
 //
 void setup() {  
   // Setup I/O
+  pinMode(powerLED, OUTPUT);
+  pinMode(LED0, OUTPUT);
+  pinMode(LED1, OUTPUT);
   pinMode(leftButton, INPUT_PULLUP);
   pinMode(rightButton, INPUT_PULLUP);
+  
+  //Initialize system
+  digitalWrite(powerLED, HIGH);  // Turn on power indicator LED
+  digitalWrite(LED0, HIGH);  // Turn off LED0
+  digitalWrite(LED1, HIGH);  // Turn off LED1
+  
 
   // Initatize sensors and data fields
   tricorder[0].sensorID ="HDC1000";
   tricorder[0].UM = "% Humidity";
-  tricorder[0].sensorVal = 46;
+  tricorder[0].sensorVal = 0;
   tricorder[1].sensorID ="LMT70";
   tricorder[1].UM = "Degrees F";
-  tricorder[1].sensorVal = 75;
+  tricorder[1].sensorVal = 0;
   tricorder[2].sensorID ="OPT3001";
-  tricorder[2].UM = "Lumens";
-  tricorder[2].sensorVal = 416;
+  tricorder[2].UM = "Lux";
+  tricorder[2].sensorVal = 0;
   tricorder[3].sensorID ="MAG3110";
-  tricorder[3].UM = "Mag Field";
-  tricorder[3].sensorVal = 3;
+  tricorder[3].UM = "uT";
+  tricorder[3].sensorVal = 0;
+  tricorder[4].sensorID ="O2 Sensor";
+  tricorder[4].UM = "ppm";
+  tricorder[4].sensorVal = 0;
+  tricorder[5].sensorID ="Pressure";
+  tricorder[5].UM = "kPa";
+  tricorder[5].sensorVal = 0;
 
   // Initialize display
   myScreen.begin();
