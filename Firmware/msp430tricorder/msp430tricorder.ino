@@ -1,4 +1,18 @@
 //
+//  MSP432Tricoder
+//  Example main.cpp for MSP432P401R-based Tricorder BoosterPack
+//
+//
+//  Date   :  Sep 12, 2015
+//  Version:  1.00
+//  File   :  MSP432Tricorder.ino
+//
+//  Licence CC = BY SA NC
+//
+//  Use of Clock from Galaxia library for MSP432 proposed by ReiVilo
+//
+
+//
 //LIBRARIES
 //
 #include "SPI.h"
@@ -22,7 +36,7 @@ struct tricorderSensors
 {
   String sensorID;
   String UM;
-  int sensorVal;
+  float sensorVal;
 };
 
 
