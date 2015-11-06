@@ -6,13 +6,13 @@ This project is one such notion.  Highlighting the amazing micrcontroller and se
 
 Some highlights of the Tricorder BoosterPack:
 
-●	HDC1000 Humidity Sensor
-●	LMT70 Temperature Sensor
-●	OPT3001 Ambient Light Sensor
-●	MAG3110 Magnetometer
-●	LMP91000 Electrochemical Sensor Interface
-●	PGA900 Programmable Resistive Sensing Conditioner
-●	microSD Card reader
-●	Peripheral Module (Pmod) Type I GPIO Interface 
-●	2 user defined buttons / 1 reset button
-●	2 user defined LEDs / 1 power indicator LED
+- HDC1000 Humidity Sensor
+- LMT70 Temperature Sensor
+- OPT3001 Ambient Light Sensor
+- MAG3110 Magnetometer
+- LMP91000 Electrochemical Sensor Interface
+- PGA900 Programmable Resistive Sensing Conditioner
+- microSD Card reader
+- Peripheral Module (Pmod) Type I GPIO Interface 
+- 2 user defined buttons / 1 reset button
+- 2 user defined LEDs / 1 power indicator LED
