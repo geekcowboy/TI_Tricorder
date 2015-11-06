@@ -96,6 +96,7 @@ void setup() {
   myScreen.clear();
   
   //Get first reading
+  tricorderSupport.begin();
   tricorderSensor[HDC1000_id].sensorVal = tricorder.read_HDC1000();
 }
 
@@ -134,26 +135,26 @@ void loop() {
   //Update sensor reading based on sensor selected by user
   switch (sensorCounter) {
     case 0:
-      tricorderSensor[HDC1000_id].sensorVal = tricorder.read_HDC1000();
+      tricorderSensor[HDC1000_id].sensorVal = (float)tricorder.read_HDC1000();
       break;
     case 1:
-      tricorderSensor[LMT70_id].sensorVal = tricorder.read_LMT70();
+      tricorderSensor[LMT70_id].sensorVal = (float)tricorder.read_LMT70();
       break;
     case 2:
-      tricorderSensor[OPT3001_id].sensorVal = tricorder.read_OPT3001();
+      tricorderSensor[OPT3001_id].sensorVal = (float)tricorder.read_OPT3001();
       break;
     case 3:
-      tricorderSensor[MAG3110_id].sensorVal = tricorder.read_MAG3110();
+      tricorderSensor[MAG3110_id].sensorVal = (float)tricorder.read_MAG3110();
       break;
     case 4:
-      tricorderSensor[LMP91000_id].sensorVal = tricorder.read_LMP91000();
+      tricorderSensor[LMP91000_id].sensorVal = (float)tricorder.read_LMP91000();
       break;
     case 5:
-      tricorderSensor[PGA900_id].sensorVal = tricorder.read_PGA900();
+      tricorderSensor[PGA900_id].sensorVal = (float)tricorder.read_PGA900();
       break;
     default:
       sensorCounter = 0;
-      tricorderSensor[HDC1000_id].sensorVal = tricorder.read_HDC1000();
+      tricorderSensor[HDC1000_id].sensorVal = (float)tricorder.read_HDC1000();
   }
 }
 
