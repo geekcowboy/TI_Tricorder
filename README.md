@@ -1,4 +1,4 @@
-# TI Tricorder Project
+Prototyping the Future: The Mark I Tricorder Project
 
 For 50 decades, Star Trek has served as an inspiration for engineers and makers alike. Many of the tech concepts of 1960s science fiction has turned into 21st century everyday reality.  One of the most beloved ideas was the all-in-one Tricorder that let the crew ascertain the status of countless environmental factors. The Tricorder of the Captain Kirk and Mr. Spock may still be a few generations away, but what if the Mark I version of the Tricorder was invented tody?
 
