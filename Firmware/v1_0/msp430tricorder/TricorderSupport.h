@@ -70,6 +70,10 @@
 #define PGA900_OTP                     (0x44)
 #define PGA900_DATA_RAM                (0x45)
 #define PGA900_CTRL_STAT_REG2          (0x47)
+#define OPT3001_ADDRESS                (0x44)
+#define OPT3001_CONFIG_REG             (0x01)
+#define OPT3001_RESULT_REG             (0x00)
+#define DEFAULT_CONFIG_100             0b1100010000010000 // 100ms
 
 
 
