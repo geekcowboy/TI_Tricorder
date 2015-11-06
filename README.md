@@ -16,3 +16,6 @@ Some highlights of the Tricorder BoosterPack:
 - Peripheral Module (Pmod) Type I GPIO Interface 
 - 2 user defined buttons / 1 reset button
 - 2 user defined LEDs / 1 power indicator LED
+
+
+Coming Soon:  Shopping Cart BOM @ Mouser Electronics
