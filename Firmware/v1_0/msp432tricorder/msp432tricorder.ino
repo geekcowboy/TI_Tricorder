@@ -96,7 +96,7 @@ void setup() {
   myScreen.clear();
   
   //Get first reading
-  tricorderSupport.begin();
+  tricorder.begin();
   tricorderSensor[HDC1000_id].sensorVal = tricorder.read_HDC1000();
 }
 

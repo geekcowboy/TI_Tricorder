@@ -42,8 +42,8 @@ float TricorderSupport::read_LMT70() {
   float LMT70_reading = analogRead(LMT70_TAO);
   digitalWrite(LMT70_TON, LOW);
 
-  float A_val = LMT70_AMul * (LMT70_reading^3);
-  float B_val = LMT70_BMul * (LMT70_reading^2);
+  float A_val = LMT70_AMul * (LMT70_reading*LMT70_reading*LMT70_reading);
+  float B_val = LMT70_BMul * (LMT70_reading*LMT70_reading);
   float C_val = LMT70_CMul * LMT70_reading;
 
   return A_val+B_val+C_val+LMT70_DMul;
@@ -52,7 +52,7 @@ float TricorderSupport::read_LMT70() {
 
 
 //HDC1000
-float TricorderSupport::read_HDC1000() {
+double TricorderSupport::read_HDC1000() {
   uint16_t humidityRaw;
   uint8_t bytes = 2;
   Wire.beginTransmission(HDC1000_ADDRESS);
@@ -78,39 +78,39 @@ int TricorderSupport::read_MAG3110() {
   int X_LSB, X_MSB;  
 
   Wire.beginTransmission(MAG3110_ADDRESS);          
-  Wire.send(MAG3110_CTRL_REG2);   
-  Wire.send(0x80);     
+  Wire.write(MAG3110_CTRL_REG2);   
+  Wire.write(0x80);     
   Wire.endTransmission();     
 
   delay(15);
 
   Wire.beginTransmission(MAG3110_ADDRESS);
-  Wire.send(MAG3110_CTRL_REG1);            
-  Wire.send(0x01);                 
+  Wire.write(MAG3110_CTRL_REG1);            
+  Wire.write(0x01);                 
   Wire.endTransmission();      
 
   Wire.beginTransmission(MAG3110_ADDRESS); 
-  Wire.send(MAG3110_X_MSB);           
+  Wire.write(MAG3110_X_MSB);           
   Wire.endTransmission();     
 
   delayMicroseconds(2); 
 
   Wire.requestFrom(MAG3110_ADDRESS, 1); 
   while(Wire.available()) { 
-    X_MSB = Wire.receive(); 
+    X_MSB = Wire.read(); 
   }
 
   delayMicroseconds(2); 
 
   Wire.beginTransmission(MAG3110_ADDRESS);
-  Wire.send(MAG3110_X_LSB);              
+  Wire.write(MAG3110_X_LSB);              
   Wire.endTransmission();     
 
   delayMicroseconds(2); 
 
   Wire.requestFrom(MAG3110_ADDRESS, 1); 
   while(Wire.available()) { 
-    X_LSB = Wire.receive();
+    X_LSB = Wire.read();
   }
 
   int X_Field = (X_LSB|(X_MSB << 8));
@@ -129,7 +129,6 @@ float TricorderSupport::read_OPT3001() {
   int16_t raw;
   int8_t lsb;
   int8_t msb;
-  int16_t result;
 
   Wire.beginTransmission(OPT3001_ADDRESS);
   Wire.write(OPT3001_CONFIG_REG);

@@ -28,18 +28,18 @@
 #define LMP91000_id            4
 #define PGA900_id              5
 
-#define leftButton             P6_7        //pin35  P6_7
-#define rightButton            P6_6        //pin36  P6_6
-#define powerLED               P2_7        //pin40  P2_7
-#define LED0                   P5_7        //pin17  P5_7
-#define LED1                   P2_6        //pin39  P2_6
+#define leftButton             35//P6_7        //pin35  P6_7
+#define rightButton            36//P6_6        //pin36  P6_6
+#define powerLED               40//P2_7        //pin40  P2_7
+#define LED0                   17//P5_7        //pin17  P5_7
+#define LED1                   39//P2_6        //pin39  P2_6
 
 #define PMOD0                 P3_6         //pin11
 #define PMOD1                 P3_5         //pin32
 #define PMOD2                 P5_1         //pin33
 #define PMOD3                 P2_3         //pin34
 
-#define LMT70_TON             P4_6         //pin8
+#define LMT70_TON             8 //P4_6         //pin8
 #define LMT70_TAO             A14          //pin23    P6_1
 #define LMP91000_VOUT         A8           //pin27    P4_5
 #define PGA900_VOUT           A6           //pin28    P4_7
@@ -68,7 +68,7 @@
 #define PGA900_CTRL_STAT_REG1          (0x42)
 #define PGA900_DEV_RAM                 (0x43)
 #define PGA900_OTP                     (0x44)
-#define PGA900_DATA_RAM                (0x45)
+//#define PGA900_DATA_RAM                (0x45)
 #define PGA900_CTRL_STAT_REG2          (0x47)
 #define OPT3001_ADDRESS                (0x44)
 #define OPT3001_CONFIG_REG             (0x01)
@@ -90,10 +90,10 @@ public:
     float read_LMP91000(void);
 
 private:
-  const float LMT70_AMul = -0.00000000180963;
-  const float LMT70_BMul = -0.000003325395;
-  const float LMT70_CMul = -0.1814103;
-  const float LMT70_DMul = 205.5894;
+  float LMT70_AMul = 0.00000000180963;
+  float LMT70_BMul = 0.000003325395;
+  float LMT70_CMul = 0.1814103;
+  float LMT70_DMul = 205.5894;
 };
 
 
