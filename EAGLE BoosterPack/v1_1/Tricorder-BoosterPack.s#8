@@ -10011,11 +10011,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND29" library="supply1" deviceset="GND" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
-<part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
+<part name="GND15" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10096,11 +10096,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND29" gate="1" x="203.2" y="147.32"/>
 <instance part="GND13" gate="1" x="5.08" y="5.08"/>
 <instance part="GND14" gate="1" x="15.24" y="5.08"/>
-<instance part="GND15" gate="1" x="22.86" y="5.08"/>
 <instance part="GND16" gate="1" x="30.48" y="5.08"/>
 <instance part="GND17" gate="1" x="83.82" y="5.08"/>
 <instance part="GND18" gate="1" x="93.98" y="5.08"/>
 <instance part="GND19" gate="1" x="101.6" y="5.08"/>
+<instance part="GND15" gate="1" x="22.86" y="5.08"/>
 </instances>
 <busses>
 </busses>
@@ -10608,12 +10608,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GND14" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="22.86" y1="7.62" x2="22.86" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="GND@5"/>
-<wire x1="22.86" y1="17.78" x2="33.02" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="GND15" gate="1" pin="GND"/>
-</segment>
-<segment>
 <wire x1="30.48" y1="7.62" x2="30.48" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="GND@10"/>
 <wire x1="30.48" y1="15.24" x2="33.02" y2="15.24" width="0.1524" layer="91"/>
@@ -10633,6 +10627,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C5" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="12.7" x2="101.6" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="GND19" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="GND@5"/>
+<pinref part="GND15" gate="1" pin="GND"/>
+<wire x1="33.02" y1="17.78" x2="22.86" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="17.78" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">

@@ -9994,7 +9994,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="U4" library="OPT3001_GOOD" deviceset="OPT3001" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
-<part name="C1" library="adafruit" deviceset="C-US" device="C0603" value="0"/>
+<part name="C1" library="adafruit" deviceset="C-US" device="C0603" value="0.01u"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="C2" library="adafruit" deviceset="C-US" device="C0603" value="0.1u"/>
