@@ -120,24 +120,36 @@ void loop() {
 
   //Update sensor reading based on sensor selected by user
   switch (sensorCounter) {
-  case 0:
+  case HDC1000_id:
     tricorderSensor[HDC1000_id].sensorVal = (float)tricorder.read_HDC1000();
     break;
-  case 1:
+    
+  case LMT70_id:
     tricorderSensor[LMT70_id].sensorVal = (float)tricorder.read_LMT70();
     break;
-  case 2:
+    
+  case OPT3001_id:
     tricorderSensor[OPT3001_id].sensorVal = (float)tricorder.read_OPT3001();
     break;
-  case 3:
+    
+  case MAG3110_id:
     tricorderSensor[MAG3110_id].sensorVal = (float)tricorder.read_MAG3110();
+    if (tricorderSensor[MAG3110_id].sensorVal < 30000) {
+      digitalWrite(LED1, HIGH);
+    }
+    else {
+      digitalWrite(LED1, LOW);
+    }
     break;
-  case 4:
+    
+  case LMP91000_id:
     tricorderSensor[LMP91000_id].sensorVal = (float)tricorder.read_LMP91000();
     break;
-  case 5:
+    
+  case PGA900_id:
     tricorderSensor[PGA900_id].sensorVal = (float)tricorder.read_PGA900();
     break;
+    
   default:
     sensorCounter = 0;
     tricorderSensor[HDC1000_id].sensorVal = (float)tricorder.read_HDC1000();
