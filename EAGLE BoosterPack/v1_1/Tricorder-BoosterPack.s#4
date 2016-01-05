@@ -10017,6 +10017,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
+<part name="GND30" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10103,6 +10104,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND18" gate="1" x="93.98" y="5.08"/>
 <instance part="GND19" gate="1" x="101.6" y="5.08"/>
 <instance part="GND15" gate="1" x="22.86" y="5.08"/>
+<instance part="GND30" gate="1" x="111.76" y="76.2"/>
 </instances>
 <busses>
 </busses>
@@ -10651,6 +10653,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GND15" gate="1" pin="GND"/>
 <wire x1="33.02" y1="17.78" x2="22.86" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="17.78" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U6" gate="A" pin="CSN"/>
+<pinref part="GND30" gate="1" pin="GND"/>
+<wire x1="119.38" y1="81.28" x2="111.76" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="81.28" x2="111.76" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
